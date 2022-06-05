@@ -73,10 +73,11 @@ class MainActivity : ComponentActivity() {
                                 TextField(value = originalText.value, onValueChange = {
                                     originalText.value = it
                                 },
-                                    modifier = Modifier.fillMaxWidth().padding(20.dp)
+                                    modifier = Modifier.fillMaxWidth().padding(20.dp),
+                                    placeholder = {Text("Enter text")}
                                 )
-                                Text(text = encrText.value, modifier = Modifier.padding(20.dp))
-                                Text(text = decrText.value, modifier = Modifier.padding(20.dp))
+                                Text(text = "Encrypted : ${encrText.value}", modifier = Modifier.padding(10.dp))
+                                Text(text = "Decrypted : ${decrText.value}", modifier = Modifier.padding(10.dp))
 
                             }
 
@@ -201,19 +202,4 @@ class MainActivity : ComponentActivity() {
         }
 
 }
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    CryptographyTheme {
-        Greeting("Android")
-    }
-}
-
-
 
